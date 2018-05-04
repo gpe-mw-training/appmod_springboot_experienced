@@ -79,7 +79,7 @@ paths:
           schema:
             type: object
             
-  /checkout/{cartId}:
+  /cart/checkout/{cartId}:
     post:
       summary: Checkout a shopping cart by ID
       description: |
