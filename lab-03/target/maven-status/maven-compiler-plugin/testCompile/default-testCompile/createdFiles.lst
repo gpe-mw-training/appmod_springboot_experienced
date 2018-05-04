@@ -1,0 +1,5 @@
+com/redhat/coolstore/cart/service/CatalogServiceImplTest.class
+com/redhat/coolstore/cart/rest/CartEndpointTest.class
+com/redhat/coolstore/cart/rest/HealthCheckEndpointTest.class
+com/redhat/coolstore/cart/service/ShoppingCartServiceImplTest.class
+com/redhat/coolstore/cart/service/PriceCalculationServiceImplTest.class

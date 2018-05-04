@@ -1,0 +1,12 @@
+com/redhat/coolstore/cart/CartServiceApplication.class
+com/redhat/coolstore/cart/model/Product.class
+com/redhat/coolstore/cart/model/ShoppingCart.class
+com/redhat/coolstore/cart/rest/HealthCheckEndpoint.class
+com/redhat/coolstore/cart/model/ShoppingCartItem.class
+com/redhat/coolstore/cart/rest/CartEndpoint.class
+com/redhat/coolstore/cart/service/PriceCalculationServiceImpl.class
+com/redhat/coolstore/cart/service/ShoppingCartService.class
+com/redhat/coolstore/cart/service/CatalogService.class
+com/redhat/coolstore/cart/service/CatalogServiceImpl.class
+com/redhat/coolstore/cart/service/PriceCalculationService.class
+com/redhat/coolstore/cart/service/ShoppingCartServiceImpl.class

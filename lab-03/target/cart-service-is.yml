@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    name: cart-service
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: cart-service@sha256:56437f33cf00ba0bcd8a8ef8fe7a854c483ea5bed1aaa35292f3a692ffbc9df1
+        namespace: pens-coolstore-cart
+      name: latest
