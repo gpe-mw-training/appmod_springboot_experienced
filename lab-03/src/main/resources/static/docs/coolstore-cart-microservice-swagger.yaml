@@ -1,0 +1,97 @@
+swagger: '2.0'
+info:
+  title: GPTE Coolstore Cart API
+  description: Shopping Cart for the Coolstore
+  version: 1.0.0
+schemes:
+  - http
+basePath: /
+produces:
+  - application/json
+paths:
+  /cart/{cartId}:
+    get:
+      summary: Get a shopping cart by ID
+      description: |
+        This endpoint returns a shopping cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: The id of the cart to retrieve
+          type: string
+      responses:
+        '200':
+          description: A shopping cart
+          schema:
+            type: object
+
+  /cart/{cartId}/{itemId}/{quantity}:
+    post:
+      summary: Adds an item to the shopping cart
+      description: |
+        This endpoint adds an item to the shopping cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: The id of the cart to add items to
+          type: string
+        - name: itemId
+          in: path
+          required: true
+          description: The id of the item to add
+          type: string
+        - name: quantity
+          in: path
+          required: true
+          description: The quantity of the items to add
+          type: number
+      responses:
+        '200':
+          description: A shopping cart
+          schema:
+            type: object
+
+    delete:
+      summary: Deletes an item to the shopping cart
+      description: |
+        This endpoint deletes an item to the shopping cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: The id of the cart to delete items from
+          type: string
+        - name: itemId
+          in: path
+          required: true
+          description: The id of the item to delete
+          type: string
+        - name: quantity
+          in: path
+          required: true
+          description: The quantity of the items to delete
+          type: number
+      responses:
+        '200':
+          description: A shopping cart
+          schema:
+            type: object
+            
+  /cart/checkout/{cartId}:
+    post:
+      summary: Checkout a shopping cart by ID
+      description: |
+        This endpoint checks out a shopping cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: The id of the cart to checkout
+          type: string
+      responses:
+        '200':
+          description: A shopping cart
+          schema:
+            type: object

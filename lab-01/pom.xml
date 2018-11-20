@@ -11,7 +11,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<version.spring-boot>1.5.10.RELEASE</version.spring-boot>
+		<version.spring-boot>1.5.16.RELEASE</version.spring-boot>
 		<version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
 	</properties>
 
