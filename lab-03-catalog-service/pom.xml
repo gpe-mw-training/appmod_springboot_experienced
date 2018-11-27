@@ -15,8 +15,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <vertx.version>3.4.2.redhat-009</vertx.version>
-    <vertx-maven-plugin.version>1.0.13</vertx-maven-plugin.version>
+    <vertx.version>3.5.4.redhat-00002</vertx.version>
+    <vertx-maven-plugin.version>1.0.17</vertx-maven-plugin.version>
     
     <version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
     
@@ -138,7 +138,7 @@
     <plugins>
 
       <plugin>
-        <groupId>io.fabric8</groupId>
+        <groupId>io.reactiverse</groupId>
         <artifactId>vertx-maven-plugin</artifactId>
         <version>${vertx-maven-plugin.version}</version>
         <executions>
