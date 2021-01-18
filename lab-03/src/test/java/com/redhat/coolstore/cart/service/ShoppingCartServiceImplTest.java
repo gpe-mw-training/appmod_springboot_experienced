@@ -238,7 +238,7 @@ public class ShoppingCartServiceImplTest {
         when(catalogService.getProduct("p3")).thenReturn(null);
 
         doAnswer(invocation -> {
-            ShoppingCart sc = invocation.getArgumentAt(0, ShoppingCart.class);
+            ShoppingCart sc = invocation.getArgument(0, ShoppingCart.class);
             sc.setCartItemTotal(100.0);
             sc.setCartTotal(120.0);
             sc.setShippingTotal(20.0);
