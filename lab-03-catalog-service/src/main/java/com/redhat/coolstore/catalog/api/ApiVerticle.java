@@ -9,8 +9,6 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.healthchecks.HealthCheckHandler;
-import io.vertx.ext.healthchecks.Status;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
@@ -33,32 +31,16 @@ public class ApiVerticle extends AbstractVerticle {
         router.route("/product").handler(BodyHandler.create());
         router.post("/product").handler(this::addProduct);
 
-
-        // Health Checks
-
-        // TODO: Add Health Check code here for
-        //       - /health/readiness
-        //       - /health/liveness
-
         // Health Checks
         router.get("/health/readiness").handler(rc -> rc.response().end("OK"));
-
-        HealthCheckHandler healthCheckHandler = HealthCheckHandler.create(vertx)
-                .register("health", f -> health(f));
-        router.get("/health/liveness").handler(healthCheckHandler);
+        router.get("/health/liveness").handler(rc -> rc.response().end("OK"));
         
         // Static content for swagger docs
         router.route().handler(StaticHandler.create());
         
         vertx.createHttpServer()
-            .requestHandler(router::accept)
-            .listen(config().getInteger("catalog.http.port", 8080), result -> {
-                if (result.succeeded()) {
-                    startFuture.complete();
-                } else {
-                    startFuture.fail(result.cause());
-                }
-            });
+            .requestHandler(router)
+            .listen(config().getInteger("catalog.http.port", 8080));
     }
 
     private void getProducts(RoutingContext rc) {
@@ -109,19 +91,4 @@ public class ApiVerticle extends AbstractVerticle {
         });
     }
     
-    private void health(Future<Status> future) {
-        catalogService.ping(ar -> {
-            if (ar.succeeded()) {
-                // HealthCheckHandler has a timeout of 1000s. If timeout is exceeded, the future will be failed
-                if (!future.isComplete()) {
-                    future.complete(Status.OK());
-                }
-            } else {
-                if (!future.isComplete()) {
-                    future.complete(Status.KO());
-                }
-            }
-        });
-    }    
-
 }
