@@ -15,10 +15,13 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <vertx.version>3.5.4.redhat-00002</vertx.version>
-    <vertx-maven-plugin.version>1.0.17</vertx-maven-plugin.version>
-    
-    <version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
+    <!-- vert.x properties -->
+    <vertx.version>3.9.1.redhat-00001</vertx.version>
+
+    <!-- Maven plugins -->
+    <vertx-maven-plugin.version>1.0.22</vertx-maven-plugin.version>
+
+    <fabric8-maven-plugin.version>4.4.1</fabric8-maven-plugin.version>
     
     <junit.version>4.12</junit.version>
     <mockito.version>2.16.0</mockito.version>
